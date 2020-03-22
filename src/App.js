@@ -3,14 +3,19 @@ import "./App.css";
 
 import ImageGrid from "./components/ImageGrid/ImageGrid";
 
-import Headers from './components/Header/Header';
+import Headers from "./components/Header/Header";
+
+import { configureStore } from "./redux/store";
+import { Provider } from "react-redux";
 
 function App() {
   return (
-    <div className="App">
-      <Headers />
-      <ImageGrid />
-    </div>
+    <Provider store={configureStore()}>
+      <div className="App">
+        <Headers />
+        <ImageGrid />
+      </div>
+    </Provider>
   );
 }
 
